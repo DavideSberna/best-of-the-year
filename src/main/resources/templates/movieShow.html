@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Il tuo titolo</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css">
+</head>
+<body>
+	<header class="bg-dark">
+		<footer class="container">
+			<section class="pt-3 pb-3 row">
+				<div class="col-2 d-flex align-items-center">
+					<h3 class="p-0 m-0 text-white">Best of</h3>
+				</div>
+				<div class="col-10">
+					<a class="btn btn-warning me-3 text-white" th:href="@{/movies}" role="button">Movies</a>
+					<a class="btn btn-warning me-3 text-white" th:href="@{/songs}" role="button">Songs</a>
+					<a class="btn btn-outline-light" th:href="@{/}" role="button">Home</a>
+				</div>
+			</section>
+		</footer>
+	</header>
+	
+	<main class="bg-light vh-100">
+		<section class="container">			
+			<div class="text-center pt-5 pb-4">			
+				<h1 class="text-primary text-dark">Movie selected</h1>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="card m-auto border-0" style="width: 18rem;">
+					  <img class="card-img-top" th:src="@{/} + ${selectedMovie.image}" alt="card">
+					  <div class="card-body">
+					    <h5 class="card-title" th:text="${selectedMovie.id}"></h5>
+					    <p class="card-text" th:text="${selectedMovie.title}"></p>
+					  </div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+     
+</body>
+</html>
